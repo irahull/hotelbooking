@@ -1,0 +1,129 @@
+.feature-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f2f3f8;
+  padding: 10px 100px;
+  font-family: "Poppins", sans-serif;
+  .feature-section {
+    p {
+      font-size: 28px;
+      font-weight: 500;
+      span {
+        font-weight: 600;
+      }
+      
+    }.para{
+        p{
+            font-size: 14px;
+            padding: 5px 0px;
+            color: rgb(122, 122, 122);
+        }
+      }
+    .feature-btn {
+      button {
+        padding: 3px 15px;
+        color: #6d39de;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        border: 1px solid #6d39de;
+        border-radius: 5px;
+      }
+    }
+  }
+  .feature-wrapper {
+    display: flex;
+    position: relative;
+    .feature-data {
+      width: auto;
+      height: auto;
+      margin-top: 20px;
+      transition: transform 0.5s ease 0s, opacity 300ms ease 0s;
+      display: flex;
+      //   align-items: center;
+      gap: 10px;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+  } .next {
+    padding: 16px 20px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+    border-radius: 999px;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(-0%, -50%);
+  }
+  .prev{
+    padding: 16px 20px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+      border-radius: 999px;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(-0%, -50%);
+      z-index: 5;
+  } ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+
+// --------------------------- Show Feature Data ----------------------
+
+.data-section{
+    position: relative;
+    .image-section{
+        margin: 0px 4px;
+       img{
+        width: 340px;
+        height: 240px;
+        border-radius: 5px;
+       }
+    }.title-section{
+      width: 100%;
+      text-align: center;
+        position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translate(-50%, -0%);
+        .property{
+          transition:linear 0.3s;
+          visibility: hidden;
+          opacity: 0;
+          p{width: 32%;
+            padding: 20px 0px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 600;
+            background-color: rgba(0, 0, 0, 0.662);
+            border-radius: 999px;
+            span{
+              font-size: 15px;
+              text-align: center;
+              font-weight: 500;
+            }
+          }
+        }
+        h4{
+            
+            color: white;
+        }p{
+          font-size: 12px;
+          color: white;
+        }
+      
+    }&:hover .property{
+      visibility: visible;
+      opacity: 1;
+    }
+}

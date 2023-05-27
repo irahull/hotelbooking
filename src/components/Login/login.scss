@@ -1,0 +1,117 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Poppins;
+  background-color: rgb(215, 236, 255);
+  .login-section {
+    width: 410px;
+    height: 90vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    .login-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 10px auto;
+      p {
+        width: 75%;
+        text-align: center;
+        font-size: 17px;
+        padding: 10px 0px;
+        font-weight: 500;
+      }
+      .fa-solid {
+        text-align: center;
+        font-size: 22px;
+        cursor: pointer;
+      }
+    }
+    .login-type {
+      width: 100%;
+      padding: 10px 40px;
+      .login-with-google,
+      .login-with-email,
+      .login-with-guest {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid black;
+        padding: 8px 0px;
+        margin: 30px auto;
+        border-radius: 4px;
+        cursor: pointer;
+        img {
+          width: 8%;
+        }
+        p {
+          width: 70%;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      .login-with-email {
+        padding: 10px 0px;
+        img {
+          width: 9%;
+        }
+      }
+    }
+    .or {
+      width: 92%;
+      text-align: center;
+      p {
+        font-size: 17px;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+    .login-with-phone {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .india-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        img {
+          width: 20px;
+        }
+      }
+      .ph-number {
+        width: 78%;
+        input {
+          padding: 5px 8px;
+          width: 100%;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          outline: none;
+          font-family: Poppins;
+          border-bottom: 1px solid black;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+      }
+    }
+    .agree-message{
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      p{
+        font-size: 14px;
+        text-align: center;
+      }
+      span{
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
