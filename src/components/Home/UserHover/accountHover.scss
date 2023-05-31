@@ -1,0 +1,55 @@
+.account-hover {
+  width: 185px;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  transition: linear 0.5s;
+  font-family: 'Open Sans', sans-serif;
+  .user-hover-btn {
+    margin: 10px auto;
+    button {
+      font-size: 16px;
+      background-color: transparent;
+      color: #004e8f;
+      outline: none;
+      border: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+    }
+    span {
+      color: #004e8f;
+    }
+  }
+  .my-activity {
+    p {
+      color: rgb(4, 21, 51);
+      font-weight: 500;
+      padding: 2px 5px;
+      font-family: 'Open Sans', sans-serif;
+      &:hover{
+        background-color: rgb(241, 241, 241);
+      }
+    }
+    .activity-list {
+      margin-top: 10px;
+      p {
+        width: 100%;
+        padding: 3px 0px;
+        margin-top: 10px;
+        text-decoration: none;
+        font-size: 12px !important;
+        padding-left: 10px;
+        color: rgb(85, 85, 85) !important;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover{
+          background-color: rgb(241, 241, 241);
+        }
+      }
+    }
+  }
+}

@@ -127,3 +127,16 @@
       opacity: 1;
     }
 }
+
+// ----------- Responsive Design -------------
+
+@media screen and (max-width: 500px) {
+  .feature-container{
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .feature-container{
+    padding: 10px 10px;
+  }
+}

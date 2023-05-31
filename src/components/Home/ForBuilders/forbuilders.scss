@@ -1,0 +1,73 @@
+.forbuilder-container{
+    width: 750px;
+    height: 55vh;
+    z-index: 5;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    .builder-box-one{
+        width: 30%;
+        height: 100%;
+        position: relative;
+        background-color: aliceblue;
+        padding: 30px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        p{
+            font-size: 12px;
+            margin-top: 20px;
+            font-weight: 600;
+            cursor: pointer;
+           
+        }
+        .box-one-bottom{
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            p{
+                color: rgb(118, 118, 118);
+                font-size: 12px;
+                font-weight: 600;
+            }
+            span{
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+    .builder-box-two{
+        width: 35%;
+        height: 100%;
+        padding: 30px;
+        font-weight: 600;
+        p{  width: 100%;
+            font-size: 12px;
+            padding: 3px 5px;
+            color: rgb(120, 120, 120);
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(244, 248, 255);
+            }
+        }
+        .box-two-text{
+           
+            p{
+                font-size: 12px;
+                margin-top: 20px;
+                color: black;
+            }
+        }
+    }
+    .builder-box-three{
+        width: 35%;
+        margin-top: 30px;
+        img{
+            width: 250px;
+            cursor: pointer;
+        }
+    }
+}

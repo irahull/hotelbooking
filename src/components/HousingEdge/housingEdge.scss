@@ -7,7 +7,7 @@
   .housing-heading {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 13px;
     p {
       font-size: 28px;
       font-weight: 500;
@@ -20,9 +20,10 @@
         padding: 2px 15px;
         color: #6d39de;
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 500;
         font-family: "Poppins", sans-serif;
         border: 1px solid #6d39de;
+        border-radius: 5px;
       }
     }
   }
@@ -86,5 +87,13 @@
   }
   ::-webkit-scrollbar {
     width: 0px;
+  }
+}
+
+// ----------- Responsive Design -------------
+
+@media screen and (max-width: 500px) {
+  .housing-edge-section{
+    padding: 10px 20px;
   }
 }

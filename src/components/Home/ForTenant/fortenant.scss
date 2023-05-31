@@ -1,0 +1,57 @@
+.forbuilder-container{
+    width: 750px;
+    height: 55vh;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 10px;
+    .builder-box-one{
+        width: 30%;
+        height: 100%;
+        position: relative;
+        background-color: aliceblue;
+        padding: 30px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        p{
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .box-one-bottom{
+            position: absolute;
+            bottom: 5px;
+            p{
+                color: rgb(118, 118, 118);
+                font-size: 15px;
+            }
+            span{
+                font-size: 15px;
+            }
+        }
+    }
+    .builder-box-two{
+        width: 35%;
+        height: 100%;
+        padding: 30px;
+        p{
+            font-size: 15px;
+            color: rgb(120, 120, 120);
+        }
+        .box-two-text{
+           
+            p{
+                font-size: 15px;
+                margin-top: 20px;
+                color: black;
+            }
+        }
+    }
+    .builder-box-three{
+        width: 35%;
+        margin-top: 30px;
+        img{
+            width: 250px;
+        }
+    }
+}

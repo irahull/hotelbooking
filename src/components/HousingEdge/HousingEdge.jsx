@@ -50,7 +50,7 @@ const HousingEdge = () => {
           {scrollX !== 0 && (
             <button
               className="prev"
-              onClick={() => slide(-50)}
+              onClick={() => slide(-150)}
             >
               
               <i class="fa-solid fa-arrow-left"></i>
@@ -64,7 +64,7 @@ const HousingEdge = () => {
           {!scrolEnd && (
             <button
               className="next"
-              onClick={() => slide(+50)}
+              onClick={() => slide(+150)}
             >
 
               <i class="fa-solid fa-arrow-right"></i>

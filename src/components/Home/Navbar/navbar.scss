@@ -1,0 +1,194 @@
+.navbar-container {
+  width: 100%;
+  height: 12vh;
+  font-family: 'Open Sans', sans-serif;
+  // background: linear-gradient(360deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  .navbar-section {
+    width: 100%;
+    height: 100%;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      p{
+        // visibility: hidden;
+        // opacity: 0;
+        display: none;
+        color: white;
+        font-size: 24px;
+      }
+      .logo {
+        img {
+          width: 150px;
+          text-align: left;
+        }
+      }
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      margin-right: 10px;
+      .ul {
+        display: flex;
+        gap: 30px;
+        .nav-list{
+          position: relative;
+          transition: linear 0.5s;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+              color: white;
+              opacity: 0.8;
+              font-size: 14px;
+              font-weight: 600;
+               &:hover{
+              border-bottom: 2px solid white;
+            }
+              
+            }
+           
+          }
+          .nav-owner{
+            position: absolute;
+            top: 100%;
+            margin-top: 15px;
+            right: -100%;
+            transition: linear 0.3s;
+          }
+          .nav-tenant{
+            position: absolute;
+            top: 100%;
+            margin-top: 15px;
+            right: -200%;
+            transition: linear 0.3s;
+          }
+          .nav-builder{
+            position: absolute;
+            top: 100%;
+            margin-top: 15px;
+            right: 0% ;
+            transition: linear 0.3s;
+          }
+          .nav-insight{
+            position: absolute;
+            top: 100%;
+            margin-top: 15px;
+            right: 0% ;
+            transition: linear 0.3s;
+          }
+          .nav-hide{
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+       
+      }
+      .nav-btn {
+        button {
+          padding: 5px 15px;
+          border: none;
+          background-color: white;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 600;
+          font-family: 'Open Sans', sans-serif;
+        }
+      }
+      .user-hover {
+        position: relative;
+        .user-account {
+          padding: 5px 10px;
+          display: flex;
+          gap: 2px;
+          cursor: pointer;
+
+          p {
+            width: 25px;
+            background-color: white;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #004e8f;
+            .fa-solid {
+              padding: 4px 2px;
+              font-size: 15px;
+            }
+          }
+          span .fa-solid{
+            color: white;
+          }
+          
+        }
+        .user-show{
+          position: absolute;
+          top: 100%;
+          right: 0%;
+          transition: linear 0.3s;
+        }
+        .hide{
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+// ---------------- Responsive Style -----------------
+
+@media screen and (max-width: 480px){
+  .navbar-container{
+    height: 9vh;
+    .navbar-section{
+      padding: 0px 10px;
+      .nav-left{
+        p{
+          display: block;
+          z-index: 4;
+        }
+        .logo{
+          img{
+            width: 100px;
+          }
+        }
+      }
+      .nav-right{
+        margin: 0px;
+        .ul{
+          display: none;
+          position: relative;
+        }
+        .ul-list{
+          position: absolute;
+          z-index: 2;
+          left: 0%;
+          top: 0%;
+          width: 200px;
+          height: 70%;
+          padding-top: 80px;
+          background-color: #004e8f;
+          flex-direction: column;
+          display: block;
+
+          .nav-list{
+            padding: 15px 20px;
+          }
+        }
+        .user-hover{
+        
+            display: none;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
