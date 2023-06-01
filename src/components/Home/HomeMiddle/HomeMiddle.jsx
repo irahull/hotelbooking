@@ -1,6 +1,6 @@
 import React from "react";
 import "./homeMiddle.scss";
-import MiddleBtn from "../MiddleButton/MiddleBtn";
+import MiddleBtn from "./MiddleButton/MiddleBtn";
 import NewBg from "./../../../utils/new-bg.png";
 
 const HomeMiddle = () => {

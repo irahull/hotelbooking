@@ -56,6 +56,7 @@
           }
           .nav-owner{
             position: absolute;
+            z-index: 6;
             top: 100%;
             margin-top: 15px;
             right: -100%;
@@ -64,6 +65,7 @@
           .nav-tenant{
             position: absolute;
             top: 100%;
+            z-index: 6;
             margin-top: 15px;
             right: -200%;
             transition: linear 0.3s;
@@ -71,6 +73,7 @@
           .nav-builder{
             position: absolute;
             top: 100%;
+            z-index: 6;
             margin-top: 15px;
             right: 0% ;
             transition: linear 0.3s;
@@ -78,6 +81,7 @@
           .nav-insight{
             position: absolute;
             top: 100%;
+            z-index: 6;
             margin-top: 15px;
             right: 0% ;
             transition: linear 0.3s;
@@ -129,7 +133,7 @@
         }
         .user-show{
           position: absolute;
-          top: 100%;
+          top: 110%;
           right: 0%;
           transition: linear 0.3s;
         }

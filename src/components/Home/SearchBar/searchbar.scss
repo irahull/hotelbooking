@@ -1,0 +1,84 @@
+.search-section {
+  margin-top: -10px;
+  .container {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: center;
+    margin: 0px auto;
+    background-color: white;
+    box-shadow: 2px 10px 8px 1px #bebebe;
+    padding: 20px 20px;
+    border-radius: 999px;
+    position: relative;
+    .option {
+      flex: 1;
+      select {
+        display: inline-block;
+        padding: 10px 1px;
+        margin: 0px 10px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        border-right: 1px solid lightgray;
+        cursor: pointer;
+      }
+    }
+    .search {
+      flex: 4;
+      display: flex;
+      align-items: center;
+      padding: 4px 10px;
+      gap: 10px;
+      input {
+        width: 90%;
+        outline: none;
+        font-size: 15px;
+        border: none;
+        padding: 10px;
+        background-color: transparent;
+      }
+    }
+    .search-btn {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      color: #0078db;
+      margin-right: 5px;
+      .s-btn {
+        button {
+          border: none;
+          outline: none;
+          color: white;
+          width: 90px;
+          font-weight: 600;
+          padding: 8px 0px;
+          border-radius: 3px;
+          background-color: #0078db;
+          cursor: pointer;
+        }
+      }
+    }
+      .calender {
+        position: absolute;
+        width: 50%;
+        top: 90%;
+        right: 10%;
+        padding: 15px;
+        transition: linear 0.3s;
+        background-color: white;
+        z-index: 8;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px 1px #555;
+      }
+      .hide-calender {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+}
+
+// ------------------------- Responsive Style --------------------

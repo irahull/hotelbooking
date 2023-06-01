@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./navbar.scss";
 import Logo from "../../../utils/nnacres_white_v2.png";
-import User from "../../../utils/user.png";
-import AccountHover from "../UserHover/AccountHover";
-import ForBuilders from "../ForBuilders/ForBuilders";
+import AccountHover from "./UserHover/AccountHover";
+import ForBuilders from "./ForBuilders/ForBuilders";
 // import ForTenants from "../ForTenant/ForTenant";
 
 const Navbar = () => {

@@ -48,11 +48,7 @@ const HousingEdge = () => {
         </div>
         <div className="housing-wrapper">
           {scrollX !== 0 && (
-            <button
-              className="prev"
-              onClick={() => slide(-150)}
-            >
-              
+            <button className="prev" onClick={() => slide(-150)}>
               <i class="fa-solid fa-arrow-left"></i>
             </button>
           )}
@@ -62,11 +58,7 @@ const HousingEdge = () => {
             })}
           </div>
           {!scrolEnd && (
-            <button
-              className="next"
-              onClick={() => slide(+150)}
-            >
-
+            <button className="next" onClick={() => slide(+150)}>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
           )}

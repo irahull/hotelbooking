@@ -1,11 +1,11 @@
 import React from 'react';
-import "./fortenant.scss";
-import tenantLogo from "../../../utils/d_hp_ppf_xl.png"
+import "./forbuilders.scss";
+import BuilderLogo from "../../../../utils/d_hp_ppf_xl.png"
 
-const ForTenants = () => {
+const ForBuilders = () => {
   return (
-    <div  className='fortenant-container'>
-        <div className="tenant-box-one">
+    <div  className='forbuilder-container'>
+        <div className="builder-box-one">
             <p>Owner Offerings</p>
             <p>Insights</p>
             <p>Article & News</p>
@@ -14,7 +14,7 @@ const ForTenants = () => {
                 <span>+91 8123432344</span>
             </div>
         </div>
-        <div className="tenant-box-two">
+        <div className="builder-box-two">
             <p>Owner Offering</p>
             <div className="box-two-text">
                 <p>Post Property for Free</p>
@@ -23,11 +23,11 @@ const ForTenants = () => {
                 <p>Views Responses</p>
             </div>
         </div>
-        <div className="tenant-box-three">
-            <img src={tenantLogo} alt="tenant Image" />
+        <div className="builder-box-three">
+            <img src={BuilderLogo} alt="Builder Image" />
         </div>
     </div>
   )
 }
 
-export default ForTenants
+export default ForBuilders

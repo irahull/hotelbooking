@@ -22,31 +22,28 @@ const MiddleBtn = () => {
     duration: 0.6,
   });
 
+  const BtnGrow = () => {
+    hoverTL.play();
+    
+  };
+  const BtnShrink = () => {
+    hoverTL.reverse();
+  };
+
   // link.addEventListener("mouseenter", () => {
-  //   hoverTL.play();
+
   // });
 
   // link.addEventListener("mouseleave", () => {
   //   hoverTL.reverse();
   // });
 
-  const BtnInc = () => {
-    hoverTL.play();
-  };
-  const BtnDesc = () => {
-    hoverTL.reverse();
-  };
-
   return (
-    <div class="wrapper">
-      <a
-        class="link"
-        href="#" target="_blank" onMouseEnter={BtnInc}
-        onMouseLeave={BtnDesc}
-      >
+    <div class="wrapper" onMouseEnter={BtnGrow} onMouseLeave={BtnShrink}>
+      <a class="link" href="#" target="_blank">
         <div class="color"></div>
         <span>Explore Now</span>
-        <i class="fa-solid fa-arrow-right"></i>
+        <i className="fa-solid fa-arrow-right"></i>
       </a>
     </div>
   );
