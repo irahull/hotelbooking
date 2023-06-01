@@ -4,7 +4,7 @@ import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import PlayStore from "../../assets/play-store-logo-33874.png"
 import IosStore from "../../assets/pngwing.com.png";
-import PhoneImg from "../../assets/phonebg.png";
+import PhoneImg from "../../assets/phone.png";
 
 const AppDownload = () => {
   return (
@@ -29,7 +29,7 @@ const AppDownload = () => {
         </div>
       </div>
       <div className="right-container">
-        {/* <img src={PhoneImg} alt="" /> */}
+        <img src={PhoneImg} alt="" />
 
       </div>
     </div>

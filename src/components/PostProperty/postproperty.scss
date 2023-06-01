@@ -76,3 +76,34 @@
         }
     }
 }
+
+// -------------------- Responsive Style -----------------
+
+@media screen and (max-width: 480px) {
+    .post-property{
+        height: 100vh;
+       
+        .heading{
+            width: 100%;
+            font-size: 25px;
+        }
+        .container{
+            flex-direction: column;
+            .left{
+                padding-top: 30px;
+                width: 100%;
+                text-align: center;
+            }.right{
+                width: 100%;
+                text-align: center;
+                h2{
+                    width: 100%;
+                }
+                p{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

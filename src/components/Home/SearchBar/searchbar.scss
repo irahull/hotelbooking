@@ -82,3 +82,20 @@
 }
 
 // ------------------------- Responsive Style --------------------
+
+@media screen and (max-width: 480px){
+  .search-section{
+    margin: 0px;
+    padding-top: 50px;
+    .container{
+      width: 100%;
+      padding: 10p 10px;
+      .option{
+        display: none;
+      }
+      .search-btn{
+        gap: 5px;
+      }
+    }
+  }
+}
