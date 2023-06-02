@@ -169,21 +169,40 @@
         .ul{
           display: none;
           position: relative;
+          overflow: hidden;
         }
         .ul-list{
           position: absolute;
+          
           z-index: 2;
           left: 0%;
           top: 0%;
-          width: 200px;
-          height: 70%;
-          padding-top: 80px;
+          width: 80%;
+          height: 80%;
+          padding-top: 60px;
           background-color: #004e8f;
           flex-direction: column;
           display: block;
 
           .nav-list{
             padding: 15px 20px;
+            .nav-owner{
+              top: 70%;
+              left: -100%;
+            }
+            .nav-tenant{
+              top: 70%;
+              left: -200%;
+              // overflow: hidden;
+            }
+            .nav-builder{
+              top: 80%;
+               left: 10%;
+            }
+            .nav-insight{
+              top: 80%;
+               left: 10%;
+            }
           }
         }
         .user-hover{
