@@ -24,7 +24,7 @@
   button{
     padding: 8px 15px;
     width: 120px;
-    margin: 0px auto;
+    margin: 0px 5px;
     text-align: center;
     background-color: #0078db;
     outline: none;
@@ -59,22 +59,67 @@
       display: flex;
       cursor: pointer;
     }
-    .search {
+    .center {
       flex: 7;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px 10px;
       gap: 20px;
-     
-      input {
-        width: 100%;
-        outline: none;
-        font-size: 15px;
-        border: none;
-        padding: 10px;
-        background-color: transparent;
+     .location{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      .location-tooltip{
+        position: absolute;
+        top : 100%;
+        left: 0;
+        display: flex;
+        background-color: #cdebff;
+        font-size: 13px;
+        padding: 6px 10px;
+        border-radius: 4px;
+        transition: linear 0.3s;
       }
+     }
+     .cal{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      .cal-tooltip{
+        position: absolute;
+        top : 100%;
+        left: 0;
+        display: flex;
+        background-color: #cdebff;
+        font-size: 13px;
+        padding: 6px 10px;
+        border-radius: 4px;
+        transition: linear 0.3s;
+      }
+     }
+     .time{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      .time-tooltip{
+        position: absolute;
+        top : 100%;
+        left: 0;
+        display: flex;
+        background-color: #cdebff;
+        font-size: 13px;
+        padding: 6px 10px;
+        border-radius: 4px;
+        transition: linear 0.3s;
+      }
+     }
+     .hide-tooltip{
+      visibility: hidden;
+      opacity: 0;
+     }
     }
     .search-btn {
       flex: 1;

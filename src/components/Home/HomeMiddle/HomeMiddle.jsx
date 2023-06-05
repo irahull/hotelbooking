@@ -1,13 +1,21 @@
 import React from "react";
 import "./homeMiddle.scss";
 import MiddleBtn from "./MiddleButton/MiddleBtn";
-import NewBg from "./../../../utils/new-bg.png";
 
 const HomeMiddle = () => {
+ 
   return (
     <div className="home-middle">
       <div className="left-middle">
-        <img src={NewBg} alt="Background" />
+        <iframe
+          width="390"
+          height="220"
+          src="https://www.youtube.com/embed/ZK-rNEhJIDs?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
       <div className="right-middle">
         <div className="heading">
