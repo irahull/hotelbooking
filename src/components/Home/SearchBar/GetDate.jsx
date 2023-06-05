@@ -5,6 +5,7 @@ import {
     useDatePickReset,
   } from "@bcad1591/react-date-picker";
 
+
 const GetDate = () =>{
     const { pickedDates } = useDatePickGetter();
     const resetFunc = useDatePickReset();

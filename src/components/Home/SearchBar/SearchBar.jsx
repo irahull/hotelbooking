@@ -4,8 +4,8 @@ import { DatePickerProvider } from "@bcad1591/react-date-picker";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import KeyboardDoubleArrowUpOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowUpOutlined';
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import GetDate from "./GetDate";
 
 const SearchBar = () => {
@@ -13,7 +13,6 @@ const SearchBar = () => {
   const [menuShowHide, setMenuShowHide] = useState(false);
   const [locationShowHide, setLocationShowHide] = useState(false);
   const [calShowHide, setCalShowHide] = useState(false);
-  const [timeShowHide, setTimeShowHide] = useState(false);
 
   const iconStyle = {
     padding: "9px",
@@ -44,12 +43,6 @@ const SearchBar = () => {
   const hideCal = () => {
     setCalShowHide(false);
   };
-  const showTime = () => {
-    setTimeShowHide(true);
-  };
-  const hideTime = () => {
-    setTimeShowHide(false);
-  };
 
   return (
     <div className="search-section">
@@ -74,6 +67,8 @@ const SearchBar = () => {
                   : "location-tooltip hide-tooltip"
               }`}
             >
+              
+              <KeyboardDoubleArrowUpOutlinedIcon/>
               <p>
                 Search : <span> Near Me</span>
               </p>
@@ -93,28 +88,13 @@ const SearchBar = () => {
                 calShowHide ? "cal-tooltip" : "cal-tooltip hide-tooltip"
               }`}
             >
+              <KeyboardDoubleArrowUpOutlinedIcon/>
               <p>
                 Open <span> Calender</span>
               </p>
             </div>
           </div>
-          <div className="time">
-            <AccessTimeOutlinedIcon
-              style={iconStyle}
-              onMouseEnter={showTime}
-              onMouseLeave={hideTime}
-            />
-            <p>12:02:16 PM</p>
-            <div
-              className={`${
-                timeShowHide ? "time-tooltip" : "time-tooltip hide-tooltip"
-              }`}
-            >
-              <p>
-                Select <span> Time</span>
-              </p>
-            </div>
-          </div>
+
         </div>
         <div className="search-btn">
           <div className="s-btn">

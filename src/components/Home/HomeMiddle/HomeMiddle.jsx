@@ -8,8 +8,8 @@ const HomeMiddle = () => {
     <div className="home-middle">
       <div className="left-middle">
         <iframe
-          width="390"
-          height="220"
+          width="480"
+          height="270"
           src="https://www.youtube.com/embed/ZK-rNEhJIDs?controls=0"
           title="YouTube video player"
           frameborder="0"
