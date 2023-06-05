@@ -32,12 +32,6 @@ const SearchBar = () => {
     return (
       <div className="date-container">
         <DatePicker disablePreviousDays />
-        <div className="start-date">
-          {pickedDates.firstPickedDate?.toLocaleString()}
-        </div>
-        <div className="end-date">
-          {pickedDates.secondPickedDate?.toLocaleString()}
-        </div>
         <button type="button" onClick={resetFunc}>
           Reset
         </button>
