@@ -1,18 +1,52 @@
 import React, { useState } from "react";
 import "./searchbar.scss";
-import { DatePickerProvider } from "@bcad1591/react-date-picker";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import {
+  DatePickerProvider,
+  DatePicker,
+  useDatePickGetter,
+  useDatePickReset,
+} from "@bcad1591/react-date-picker";
 import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import KeyboardDoubleArrowUpOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowUpOutlined';
+import KeyboardDoubleArrowUpOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowUpOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import GetDate from "./GetDate";
 
 const SearchBar = () => {
   const [calenderShowHide, setCalenderShowHide] = useState(false);
   const [menuShowHide, setMenuShowHide] = useState(false);
   const [locationShowHide, setLocationShowHide] = useState(false);
   const [calShowHide, setCalShowHide] = useState(false);
+  const [dateOne, setDateOne] = useState();
+  const [dateTwo, setDateTwo] = useState();
+
+  const GetDate = () => {
+    const { pickedDates } = useDatePickGetter();
+    const resetFunc = useDatePickReset();
+
+    const saveDate = () => {
+      setDateOne(pickedDates.firstPickedDate?.toLocaleDateString());
+      setDateTwo(pickedDates.secondPickedDate?.toLocaleDateString());
+      setCalenderShowHide(false);
+    };
+
+    return (
+      <div className="date-container">
+        <DatePicker disablePreviousDays />
+        <div className="start-date">
+          {pickedDates.firstPickedDate?.toLocaleString()}
+        </div>
+        <div className="end-date">
+          {pickedDates.secondPickedDate?.toLocaleString()}
+        </div>
+        <button type="button" onClick={resetFunc}>
+          Reset
+        </button>
+        <button type="button" onClick={saveDate}>
+          Save
+        </button>
+      </div>
+    );
+  };
 
   const iconStyle = {
     padding: "9px",
@@ -67,8 +101,7 @@ const SearchBar = () => {
                   : "location-tooltip hide-tooltip"
               }`}
             >
-              
-              <KeyboardDoubleArrowUpOutlinedIcon/>
+              <KeyboardDoubleArrowUpOutlinedIcon />
               <p>
                 Search : <span> Near Me</span>
               </p>
@@ -82,19 +115,20 @@ const SearchBar = () => {
               onMouseEnter={showCal}
               onMouseLeave={hideCal}
             />
-            <p>06-05-2023</p>
+            <p className="date-time">
+              From <span> {dateOne} </span> - To <span> {dateTwo}</span>
+            </p>
             <div
               className={`${
                 calShowHide ? "cal-tooltip" : "cal-tooltip hide-tooltip"
               }`}
             >
-              <KeyboardDoubleArrowUpOutlinedIcon/>
+              <KeyboardDoubleArrowUpOutlinedIcon />
               <p>
                 Open <span> Calender</span>
               </p>
             </div>
           </div>
-
         </div>
         <div className="search-btn">
           <div className="s-btn">

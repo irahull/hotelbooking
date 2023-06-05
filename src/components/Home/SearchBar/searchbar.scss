@@ -1,19 +1,19 @@
 // ------------- Date Style -----------
-.jjxnOy{
+.jjxnOy {
   padding: 0px;
 }
-.date-container{
+.date-container {
   width: 100%;
   border-radius: 20px;
   text-align: center;
   z-index: 4;
-  .start-date{
+  .start-date {
     background-color: white;
     width: 60%;
     margin: 0px auto;
     padding: 20px;
   }
-  .end-date{
+  .end-date {
     background-color: white;
     width: 60%;
     margin: 0px auto;
@@ -21,7 +21,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
-  button{
+  button {
     padding: 8px 15px;
     width: 120px;
     margin: 0px 5px;
@@ -35,8 +35,6 @@
     cursor: pointer;
   }
 }
-
-
 
 .search-section {
   margin-top: -10px;
@@ -58,56 +56,71 @@
       flex: 1;
       display: flex;
       cursor: pointer;
+      p {
+        font-weight: 500;
+      }
     }
     .center {
       flex: 7;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-     .location{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      position: relative;
-      .location-tooltip{
-        width: 150px;
-        position: absolute;
-        top : 100%;
-        left: 0;
+      .location {
         display: flex;
         align-items: center;
-        justify-content: center;
-        background-color: #cdebff;
-        font-size: 13px;
-        padding: 5px 0px;
-        border-radius: 4px;
-        transition: linear 0.3s;
+        gap: 10px;
+        position: relative;
+        p {
+          font-weight: 500;
+        }
+        .location-tooltip {
+          width: 150px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #cdebff;
+          font-size: 13px;
+          padding: 5px 0px;
+          border-radius: 4px;
+          transition: linear 0.3s;
+        }
       }
-     }
-     .cal{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      position: relative;
-      .cal-tooltip{
-        width: 140px;
-        position: absolute;
-        top : 100%;
-        left: 0;
+      .cal {
         display: flex;
         align-items: center;
-        justify-content: center;
-        background-color: #cdebff;
-        font-size: 14px;
-        padding: 5px 0px;
-        border-radius: 4px;
-        transition: linear 0.3s;
+        gap: 10px;
+        position: relative;
+        p {
+          font-weight: 500;
+        }
+        .date-time{
+          span{
+            font-size: 18px;
+            border-bottom: 1px solid gray;
+          }
+        }
+        .cal-tooltip {
+          width: 140px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #cdebff;
+          font-size: 14px;
+          padding: 5px 0px;
+          border-radius: 4px;
+          transition: linear 0.3s;
+        }
       }
-     }
-     .hide-tooltip{
-      visibility: hidden;
-      opacity: 0;
-     }
+      .hide-tooltip {
+        visibility: hidden;
+        opacity: 0;
+      }
     }
     .search-btn {
       flex: 1;

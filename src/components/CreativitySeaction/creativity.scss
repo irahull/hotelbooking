@@ -52,3 +52,23 @@
             }
         }
     }
+
+    @media screen and (max-width: 480px){
+        .creativity-section{
+            height: 100vh;
+            padding: 0px 10px 100px 10px;
+            .creativity-container{
+                flex-direction: column;
+                .creativity-left{
+                    width: 100%;
+                    padding: 0px;
+                }
+                .creativity-right{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
