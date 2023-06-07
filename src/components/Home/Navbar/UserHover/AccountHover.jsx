@@ -1,13 +1,15 @@
 import React from "react";
 import "./accountHover.scss";
+import { useNavigate } from "react-router-dom";
 
 const AccountHover = () => {
+  const navigate = useNavigate()
   return (
     <div className="account-hover">
       <div className="user-hover-btn">
-        <button>Login</button>
+        <button onClick={()=> navigate("/login")}>Login</button>
         <span>/</span>
-        <button>Register</button>
+        <button onClick={()=> navigate("/register")}>Register</button>
       </div>
       <div className="my-activity">
         <p>My Activity</p>

@@ -10,6 +10,8 @@ import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import KeyboardDoubleArrowUpOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowUpOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { useLocation, useNavigate } from "react-router-dom";
+
 
 const SearchBar = () => {
   const [calenderShowHide, setCalenderShowHide] = useState(false);
@@ -19,9 +21,12 @@ const SearchBar = () => {
   const [dateOne, setDateOne] = useState();
   const [dateTwo, setDateTwo] = useState();
 
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const GetDate = () => {
     const { pickedDates } = useDatePickGetter();
-    const resetFunc = useDatePickReset();
+    // const resetFunc = useDatePickReset();
 
     const saveDate = () => {
       setDateOne(pickedDates.firstPickedDate?.toLocaleDateString());
@@ -32,9 +37,9 @@ const SearchBar = () => {
     return (
       <div className="date-container">
         <DatePicker disablePreviousDays />
-        <button type="button" onClick={resetFunc}>
-          Reset
-        </button>
+        {/* <button type="button" onClick={resetFunc}>
+          Clear
+        </button> */}
         <button type="button" onClick={saveDate}>
           Save
         </button>
@@ -73,7 +78,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-section">
+    <div className={`${location.pathname === "/" ? "search-section" : "search-section search-extra-style"}`}>
       <div className="container">
         <div className="option" onClick={OpenMenuOption}>
           <p>Category</p>
@@ -110,7 +115,7 @@ const SearchBar = () => {
               onMouseLeave={hideCal}
             />
             <p className="date-time">
-              From <span> {dateOne} </span> - To <span> {dateTwo}</span>
+              From <span onClick={OpenCalender}> {dateOne} </span> - To <span onClick={OpenCalender}> {dateTwo}</span>
             </p>
             <div
               className={`${
@@ -126,7 +131,7 @@ const SearchBar = () => {
         </div>
         <div className="search-btn">
           <div className="s-btn">
-            <button>Search</button>
+            <button onClick={()=> navigate("/search") }>Search</button>
           </div>
         </div>
 
@@ -149,7 +154,7 @@ const SearchBar = () => {
         <div className="menu-container">
           <div className="menu-one">
             <div className="menu-items">
-              <input type="checkbox" />
+              <input type="checkbox" value="" />
               <span>Flat/Apartment</span>
             </div>
 

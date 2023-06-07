@@ -3,7 +3,7 @@ import "./navbar.scss";
 import Logo from "../../../utils/nnacres_white_v2.png";
 import AccountHover from "./UserHover/AccountHover";
 import ForBuilders from "./ForBuilders/ForBuilders";
-// import ForTenants from "../ForTenant/ForTenant";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [accountHover, setAccountHover] = useState(false);
@@ -11,7 +11,10 @@ const Navbar = () => {
   const [ownerHover, setOwnerHover] = useState(false);
   const [tenantHover, setTenantHover] = useState(false);
   const [insightsHover, setInsightsHover] = useState(false);
-  const [menuHandler,setMenuHandler] = useState(true)
+  const [menuHandler, setMenuHandler] = useState(true);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const OpenDialogBox = () => {
     setAccountHover(!false);
@@ -41,29 +44,37 @@ const Navbar = () => {
     setTenantHover(false);
   };
 
-  const OpenInsightBox = ()=> {
-    setInsightsHover(true)
-  }
-  const CloseInsightBox = ()=> {
-    setInsightsHover(false)
-  }
+  const OpenInsightBox = () => {
+    setInsightsHover(true);
+  };
+  const CloseInsightBox = () => {
+    setInsightsHover(false);
+  };
 
-  const OpenMenu = ()=> {
-    setMenuHandler(!menuHandler)
-  }
+  const OpenMenu = () => {
+    setMenuHandler(!menuHandler);
+  };
 
   return (
-    <div className="navbar-container">
+    <div
+      className={`${
+        location.pathname === "/"
+          ? "navbar-container"
+          : "navbar-container nav-bg"
+      }`}
+    >
       <div className="navbar-section">
         <div className="nav-left">
-          <p onClick={OpenMenu} ><i class="fa-solid fa-bars"></i></p>
-          
+          <p onClick={OpenMenu}>
+            <i class="fa-solid fa-bars"></i>
+          </p>
+
           <div className="logo">
-            <img src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" onClick={() => navigate("/")} />
           </div>
         </div>
         <div className="nav-right">
-          <ul className={`${menuHandler? "ul" : "ul ul-list"}`}>
+          <ul className={`${menuHandler ? "ul" : "ul ul-list"}`}>
             <div className="nav-list">
               <li>
                 <a href="#">For Buyers</a>
@@ -107,7 +118,7 @@ const Navbar = () => {
               <li>
                 <a href="#">For Dealer/Builders</a>
               </li>
-              
+
               <div
                 className={`${
                   builderHover ? "nav-builder" : "nav-builder nav-hide"
@@ -124,13 +135,17 @@ const Navbar = () => {
               <li>
                 <a href="#">Insights</a>
               </li>
-              <div className={`${insightsHover? "nav-insight" : "nav-insight nav-hide"}`}>
-                <ForBuilders/>
+              <div
+                className={`${
+                  insightsHover ? "nav-insight" : "nav-insight nav-hide"
+                }`}
+              >
+                <ForBuilders />
               </div>
             </div>
           </ul>
           <div className="nav-btn">
-            <button>Post property</button>
+            <button onClick={()=> navigate("/search/123")}>Post property</button>
           </div>
           <div
             className="user-hover"

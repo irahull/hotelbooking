@@ -1,11 +1,21 @@
 // ------------- Date Style --------
 .date-container {
   text-align: center;
+  flex-direction: column;
   z-index: 4;
-  .jjxnOy{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 10px 0px;
+  border-radius: 15px;
+  box-shadow: rgba(51, 51, 51, 0.1) 0px 4px 10px,
+    rgba(51, 51, 51, 0.05) 0px 0px 4px;
+  .jjxnOy {
     min-width: 800px !important;
     padding: 10px !important;
     border-radius: 10px !important;
+    box-shadow: none !important;
+    display: block !important;
     .eCkURD {
       padding: 0px 20px !important;
     }
@@ -15,19 +25,20 @@
     width: 120px;
     margin: 3px 5px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #0078db;
     outline: none;
     border: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-weight: 600;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
-    -webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: rgba(51, 51, 51, 0.1) 0px 4px 10px,
+      rgba(51, 51, 51, 0.05) 0px 0px 4px;
   }
 }
+
+// -------------------------------------------
 
 .search-section {
   margin-top: -10px;
@@ -48,7 +59,7 @@ box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
     .option {
       flex: 1;
       display: flex;
-      cursor: pointer;
+      overflow: hidden;
       p {
         font-weight: 500;
       }
@@ -86,11 +97,12 @@ box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
         align-items: center;
         gap: 10px;
         position: relative;
+        cursor: pointer;
         p {
           font-weight: 500;
         }
-        .date-time{
-          span{
+        .date-time {
+          span {
             font-size: 18px;
             border-bottom: 1px solid gray;
           }
@@ -123,6 +135,7 @@ box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
       gap: 20px;
       color: #0078db;
       margin-right: 5px;
+
       .s-btn {
         button {
           border: none;
@@ -211,18 +224,22 @@ box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
     visibility: hidden;
   }
 }
+.search-extra-style{
+  margin: 40px 0px;
+  z-index: 2;
+}
 
 // ------------------------- Responsive Style --------------------
 
-@media screen and (max-width: 480px){
-.date-container{
-  .jjxnOy{
-    // width: 350px !important;
-    min-width: 30% !important;
-    display: flex !important;
-    flex-direction: column !important;
+@media screen and (max-width: 480px) {
+  .date-container {
+    .jjxnOy {
+      // width: 350px !important;
+      min-width: 30% !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
   }
-}
 }
 
 @media screen and (max-width: 480px) {
@@ -230,16 +247,33 @@ box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
     margin: 0px;
     padding-top: 50px;
     .container {
-      width: 100%;
+      width: 95%;
       padding: 10px 10px;
       .option {
         display: none;
+      }
+      .location {
+        .location-tooltip {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+      .cal {
+        .date-time {
+          span {
+            font-size: 14px;
+          }
+        }
+        .cal-tooltip {
+          visibility: hidden;
+          opacity: 0;
+        }
       }
       .search-btn {
         gap: 5px;
         .s-btn {
           button {
-            width: 75px;
+            width: 70px;
           }
         }
       }
