@@ -29,7 +29,7 @@
       }
     }
     .right-section {
-      width: 50%; 
+      width: 50%;
       text-align: left;
       img {
         width: 48%;
@@ -40,8 +40,8 @@
         &:nth-child(4) {
           border-bottom-right-radius: 10px;
         }
-        &:hover{
-         opacity: 0.9;
+        &:hover {
+          opacity: 0.9;
         }
       }
     }
@@ -160,20 +160,35 @@
           }
         }
         .right-date {
-          margin-top: 20px;
+          margin-top: 10px;
           padding: 18px 0px;
           border-radius: 5px;
           text-align: center;
           // border: 1px solid gray;
-
+          .setTime{
+            position: relative;
           .check-in-out {
             font-size: 15px;
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             span {
               font-size: 16px;
               font-weight: 500;
             }
           }
+          .sp-cal{
+            position: absolute;
+            top: 100%;
+            right: 0px;
+            transition: linear 0.3s;
+          }
+          .hide-sp-cal{
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
           .guests {
             width: 91%;
             display: flex;
@@ -185,7 +200,7 @@
             border-radius: 5px;
             border: 1px solid gray;
           }
-          button {
+          .sp-button {
             display: block;
             width: 90%;
             padding: 10px 0px;
@@ -204,48 +219,47 @@
             border: none;
           }
         }
-        .price-cal{
+        .price-cal {
           width: 90%;
           margin: 0px auto;
-          .price-one{
+          .price-one {
             padding: 8px 0px;
             display: flex;
-          align-items: center;
-          justify-content: space-between;
-          p{
-            padding: 1px 0px;
-            font-size: 15px;
-            font-weight: 500;
-            &:first-child{
-              border-bottom: 1px solid gray;
+            align-items: center;
+            justify-content: space-between;
+            p {
+              padding: 1px 0px;
+              font-size: 15px;
+              font-weight: 500;
+              &:first-child {
+                border-bottom: 1px solid gray;
+              }
             }
           }
-          
-          }
-          .price-total{
+          .price-total {
             border-top: 1px solid lightgray;
             margin-top: 10px;
             padding: 10px 0px;
             display: flex;
-          align-items: center;
-          justify-content: space-between;
-          p{
-            font-weight: 500;
-          }
+            align-items: center;
+            justify-content: space-between;
+            p {
+              font-weight: 500;
+            }
           }
         }
       }
     }
-    
   }
   .map {
     width: 100%;
     padding: 20px 0;
     margin: 10px auto;
-    h3{
+    text-align: center;
+    h3 {
       font-weight: 600;
     }
-    p{
+    p {
       padding: 10px 0px;
       font-size: 14px;
       margin-bottom: 10px;
@@ -253,6 +267,70 @@
     iframe {
       border: 2px solid lightgray;
       border-radius: 10px;
+      margin: 0px auto;
+    }
+  }
+}
+
+// -------------------- Responsive Design -------------------------
+
+@media screen and (max-width: 480px) {
+  .single-property-container {
+    // flex-direction: column;
+    padding: 20px 15px;
+    .single-property {
+      flex-direction: column;
+      .left-section {
+        width: 100%;
+      }
+      .right-section {
+        width: 100%;
+        text-align: center;
+        img {
+          width: 48%;
+        }
+      }
+    }
+    .extra-details {
+      flex-direction: column;
+      .extra-left {
+        width: 100%;
+        .left-tab {
+          width: 100%;
+          gap: 10px;
+          .tab {
+            p {
+              width: 70%;
+            }
+          }
+        }
+      }
+      .extra-right {
+        width: 100%;
+        .extra-right-box {
+          width: 100%;
+          height: 56vh;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .single-property-container {
+    .single-property {
+      .right-section {
+        img {
+          width: 45%;
+        }
+      }
+    }
+    .extra-details {
+      .extra-right {
+        .extra-right-box {
+          height: 65vh;
+        }
+      }
     }
   }
 }

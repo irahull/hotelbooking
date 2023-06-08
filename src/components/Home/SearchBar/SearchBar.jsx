@@ -12,7 +12,6 @@ import KeyboardDoubleArrowUpOutlinedIcon from "@mui/icons-material/KeyboardDoubl
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { useLocation, useNavigate } from "react-router-dom";
 
-
 const SearchBar = () => {
   const [calenderShowHide, setCalenderShowHide] = useState(false);
   const [menuShowHide, setMenuShowHide] = useState(false);
@@ -21,8 +20,8 @@ const SearchBar = () => {
   const [dateOne, setDateOne] = useState();
   const [dateTwo, setDateTwo] = useState();
 
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const GetDate = () => {
     const { pickedDates } = useDatePickGetter();
@@ -56,31 +55,17 @@ const SearchBar = () => {
     cursor: "pointer",
   };
 
-  const OpenCalender = (e) => {
-    setCalenderShowHide(!calenderShowHide);
-  };
-
-  const OpenMenuOption = () => {
-    setMenuShowHide(!menuShowHide);
-  };
-
-  const showLocation = () => {
-    setLocationShowHide(!locationShowHide);
-  };
-  const hideLocation = () => {
-    setLocationShowHide(!locationShowHide);
-  };
-  const showCal = () => {
-    setCalShowHide(true);
-  };
-  const hideCal = () => {
-    setCalShowHide(false);
-  };
 
   return (
-    <div className={`${location.pathname === "/" ? "search-section" : "search-section search-extra-style"}`}>
+    <div
+      className={`${
+        location.pathname === "/"
+          ? "search-section"
+          : "search-section search-extra-style"
+      }`}
+    >
       <div className="container">
-        <div className="option" onClick={OpenMenuOption}>
+        <div className="option" onClick={() => setMenuShowHide(!menuShowHide)}>
           <p>Category</p>
           <KeyboardArrowDownOutlinedIcon />
         </div>
@@ -89,8 +74,8 @@ const SearchBar = () => {
           <div className="location">
             <MyLocationOutlinedIcon
               style={iconStyle}
-              onMouseEnter={showLocation}
-              onMouseLeave={hideLocation}
+              onMouseEnter={()=>setLocationShowHide(!locationShowHide)}
+              onMouseLeave={()=>setLocationShowHide(!locationShowHide)}
             />
             <p>Chhatarpur New Delhi</p>
             <div
@@ -110,12 +95,19 @@ const SearchBar = () => {
           <div className="cal">
             <CalendarMonthOutlinedIcon
               style={iconStyle}
-              onClick={OpenCalender}
-              onMouseEnter={showCal}
-              onMouseLeave={hideCal}
+              onClick={() => setCalenderShowHide(!calenderShowHide)}
+              onMouseEnter={()=> setCalShowHide(true)}
+              onMouseLeave={()=> setCalShowHide(false)}
             />
             <p className="date-time">
-              From <span onClick={OpenCalender}> {dateOne} </span> - To <span onClick={OpenCalender}> {dateTwo}</span>
+              From
+              <span onClick={() => setCalenderShowHide(!calenderShowHide)}>
+                {dateOne}
+              </span>
+              - To
+              <span onClick={() => setCalenderShowHide(!calenderShowHide)}>
+                {dateTwo}
+              </span>
             </p>
             <div
               className={`${
@@ -131,7 +123,7 @@ const SearchBar = () => {
         </div>
         <div className="search-btn">
           <div className="s-btn">
-            <button onClick={()=> navigate("/search") }>Search</button>
+            <button onClick={() => navigate("/search")}>Search</button>
           </div>
         </div>
 
