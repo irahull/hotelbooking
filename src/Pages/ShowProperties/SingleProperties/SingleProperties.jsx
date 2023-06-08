@@ -21,15 +21,22 @@ import {
 } from "@bcad1591/react-date-picker";
 
 const SingleProperties = () => {
-
-  const date = new Date().toLocaleDateString()
+  const date = new Date().toLocaleDateString();
   const [dateOne, setDateOne] = useState(date);
   const [dateTwo, setDateTwo] = useState("6/18/2023");
   const [calShowHide, setCalShowHide] = useState(false);
+  const [selectPerson, setSelectPerson] = useState(1);
+  const [selectChild, setSelectChild] = useState(0);
+  const [selectInfant, setSelectInfant] = useState(0);
+  const [selectPet, setSelectPet] = useState(0);
+  const [guestToggle, setGuestToggle] = useState(false);
+  const [roomPrice] = useState(2500);
+  const [cleaningFee] = useState(340);
+  // const [TotalPrice] = useState( roomPrice+cleaningFee)
 
   const GetDate = () => {
     const { pickedDates } = useDatePickGetter();
-    // const resetFunc = useDatePickReset();                          
+    // const resetFunc = useDatePickReset();
 
     const saveDate = () => {
       setDateOne(pickedDates.firstPickedDate?.toLocaleDateString());
@@ -145,47 +152,161 @@ const SingleProperties = () => {
                 <div className="check-in-out">
                   <CalendarMonthOutlinedIcon
                     style={spIconStyle}
-                    onClick={() => setCalShowHide(!calShowHide)}/>
+                    onClick={() => setCalShowHide(!calShowHide)}
+                  />
                   <p>
                     <span> {dateOne} </span> To <span> {dateTwo}</span>
                   </p>
                 </div>
-                <div className={`${calShowHide ? "sp-cal" : "sp-cal hide-sp-cal"}`}>
+                <div
+                  className={`${calShowHide ? "sp-cal" : "sp-cal hide-sp-cal"}`}
+                >
                   <DatePickerProvider>
                     <GetDate />
                   </DatePickerProvider>
                 </div>
               </div>
-
               <div className="guests">
-                <p>1 Guest</p>
-                <ArrowDropDownOutlinedIcon />
-                <div className="select-guest">
-                  <ul>
-                    <li>Adults <span>Age 13+</span></li>
+                <p>
+                  {selectPerson === 1
+                    ? selectPerson + " Guest "
+                    : selectPerson + " Adults "}
+                  {selectChild >= 1 ? selectChild + " Child " : ""}
+                  {selectInfant >= 1 ? selectInfant + " Infants" : ""}
+                </p>
+                <ArrowDropDownOutlinedIcon
+                  onClick={() => setGuestToggle(!guestToggle)}
+                  style={{ cursor: "pointer" }}
+                />
+                <div
+                  className={`${
+                    guestToggle ? "select-guest" : "select-guest hide-guest"
+                  }`}
+                >
+                  <ul className="ul-list-one">
+                    <li>
+                      Adults <span>Age 13+</span>
+                    </li>
                     <div className="inc-desc">
-                      <div className="desc">-</div>
-                      <div className="number">1</div>
-                      <div className="inc"></div>
+                      <div
+                        className="desc"
+                        onClick={() =>
+                          selectPerson === 0
+                            ? setSelectPerson(0)
+                            : setSelectPerson(selectPerson - 1)
+                        }
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </div>
+                      <div className="number">{selectPerson}</div>
+                      <div
+                        className="inc"
+                        onClick={() => setSelectPerson(selectPerson + 1)}
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
                     </div>
                   </ul>
+                  <ul className="ul-list-two">
+                    <li>
+                      Children <span>Age 2-12</span>
+                    </li>
+                    <div className="inc-desc">
+                      <div
+                        className="desc"
+                        onClick={() =>
+                          selectChild === 0
+                            ? setSelectChild(0)
+                            : setSelectChild(selectChild - 1)
+                        }
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </div>
+                      <div className="number">{selectChild}</div>
+                      <div
+                        className="inc"
+                        onClick={() => setSelectChild(selectChild + 1)}
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                    </div>
+                  </ul>
+                  <ul className="ul-list-three">
+                    <li>
+                      Infants <span>Under 2</span>
+                    </li>
+                    <div className="inc-desc">
+                      <div
+                        className="desc"
+                        onClick={() =>
+                          selectInfant === 0
+                            ? setSelectInfant(0)
+                            : setSelectInfant(selectInfant - 1)
+                        }
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </div>
+                      <div className="number">{selectInfant}</div>
+                      <div
+                        className="inc"
+                        onClick={() => setSelectInfant(selectInfant + 1)}
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                    </div>
+                  </ul>
+                  <ul className="ul-list-four">
+                    <li>
+                      Pets <span></span>
+                    </li>
+                    <div className="inc-desc">
+                      <div
+                        className="desc"
+                        onClick={() =>
+                          selectPet === 0
+                            ? setSelectPet(0)
+                            : setSelectPet(selectPet - 1)
+                        }
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </div>
+                      <div className="number">{selectPet}</div>
+                      <div
+                        className="inc"
+                        onClick={() => setSelectPet(selectPet + 1)}
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                    </div>
+                  </ul>
+                  <p className="bottom-para">
+                    This place has a maximum of 2 guests, not including infants.
+                    If you're bringing more than 2 pets, please let your Host
+                    know.
+                  </p>
+                  <div className="exit">
+                    <p onClick={() => setGuestToggle(!guestToggle)}>Close</p>
+                  </div>
                 </div>
               </div>
-              <button className="sp-button">Book</button>
+              <button className="sp-button">Book Now</button>
               <span className="d-charge">You won't be charge yet</span>
             </div>
             <div className="price-cal">
               <div className="price-one">
-                <p> &#x20B9; 2500 * 1 night</p>
-                <p>2500</p>
+                <p>
+                  {" "}
+                  &#x20B9; {roomPrice} * {selectPerson} night
+                </p>
+                <p>{roomPrice * selectPerson}</p>
               </div>
               <div className="price-one">
                 <p>Cleaning fee</p>
-                <p>&#x20B9;340</p>
+                <p>&#x20B9;{cleaningFee}</p>
               </div>
               <div className="price-total">
                 <p>Total Price</p>
-                <p>&#x20B9;2840</p>
+                <p>&#x20B9;{roomPrice * selectPerson + cleaningFee}</p>
               </div>
             </div>
           </div>

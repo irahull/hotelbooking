@@ -165,40 +165,124 @@
           border-radius: 5px;
           text-align: center;
           // border: 1px solid gray;
-          .setTime{
+          .setTime {
             position: relative;
-          .check-in-out {
-            font-size: 15px;
-            padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            span {
-              font-size: 16px;
-              font-weight: 500;
+            .check-in-out {
+              font-size: 15px;
+              padding-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              span {
+                font-size: 16px;
+                font-weight: 500;
+              }
+            }
+            .sp-cal {
+              position: absolute;
+              top: 100%;
+              right: 0px;
+              transition: linear 0.3s;
+            }
+            .hide-sp-cal {
+              visibility: hidden;
+              opacity: 0;
             }
           }
-          .sp-cal{
-            position: absolute;
-            top: 100%;
-            right: 0px;
-            transition: linear 0.3s;
-          }
-          .hide-sp-cal{
-            visibility: hidden;
-            opacity: 0;
-          }
-        }
           .guests {
             width: 91%;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             gap: 10px;
             margin: 10px auto;
             padding: 9px 10px;
             border-radius: 5px;
             border: 1px solid gray;
+            .select-guest {
+              position: absolute;
+              top: 105%;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: rgb(255, 255, 255);
+              box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px,
+                rgba(0, 0, 0, 0.07) 0px 0px 0px 1px !important;
+              width: 100%;
+              height: 58vh;
+              border-radius: 10px;
+              padding: 20px 15px;
+              transition: linear 0.3s;
+              ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 0px;
+                li {
+                  list-style: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                  font-size: 14px;
+                  font-weight: 600;
+                  span {
+                    font-size: 12px;
+                    padding: 0px;
+                    border: none;
+                    color: #5e5e5e;
+                    font-weight: 400;
+                  }
+                }
+
+                .inc-desc {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  .desc {
+                    font-size: 13px;
+                    // padding: 5px;
+                    cursor: pointer;
+                    .fa-solid {
+                      border-radius: 999px;
+                      padding: 8px 8px;
+                      color: #5e5e5e;
+                      border: 1px solid lightgray;
+                    }
+                  }
+                  .number {
+                    font-size: 18px;
+                  }
+                  .inc {
+                    cursor: pointer;
+                    .fa-solid {
+                      padding: 6px 8px;
+                      border-radius: 999px;
+                      color: #5e5e5e;
+                      border: 1px solid lightgray;
+                    }
+                  }
+                }
+              }
+              .bottom-para {
+                padding-top: 15px;
+                font-size: 10px;
+                text-align: left;
+              }
+              .exit {
+                padding-top: 10px;
+                text-align: right;
+                width: 100%;
+                p {
+                  text-decoration: underline;
+                  cursor: pointer;
+                }
+              }
+            }
+            .hide-guest{
+              visibility: hidden;
+              opacity: 0;
+            }
           }
           .sp-button {
             display: block;
