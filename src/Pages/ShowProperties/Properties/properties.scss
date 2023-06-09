@@ -39,3 +39,14 @@
         }
     }
 
+// --------------- Responsive Design -----------------
+
+@media screen and (max-width: 480px){
+    .properties-section{
+        width: 100%;
+        // overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./singleProperties.scss";
 import RoomImg from "./../../../assets/room-one.webp";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
@@ -23,7 +23,7 @@ import {
 const SingleProperties = () => {
   const date = new Date().toLocaleDateString();
   const [dateOne, setDateOne] = useState(date);
-  const [dateTwo, setDateTwo] = useState("6/18/2023");
+  const [dateTwo, setDateTwo] = useState("6/10/2023");
   const [calShowHide, setCalShowHide] = useState(false);
   const [selectPerson, setSelectPerson] = useState(1);
   const [selectChild, setSelectChild] = useState(0);
@@ -32,11 +32,12 @@ const SingleProperties = () => {
   const [guestToggle, setGuestToggle] = useState(false);
   const [roomPrice] = useState(2500);
   const [cleaningFee] = useState(340);
+  const [totalDays, setTotalDays] = useState(1);
   // const [TotalPrice] = useState( roomPrice+cleaningFee)
 
   const GetDate = () => {
     const { pickedDates } = useDatePickGetter();
-    // const resetFunc = useDatePickReset();
+    const resetFunc = useDatePickReset();
 
     const saveDate = () => {
       setDateOne(pickedDates.firstPickedDate?.toLocaleDateString());
@@ -47,15 +48,23 @@ const SingleProperties = () => {
     return (
       <div className="date-container">
         <DatePicker disablePreviousDays />
-        {/* <button type="button" onClick={resetFunc}>
+        <button type="button" onClick={resetFunc}>
           Clear
-        </button> */}
+        </button>
         <button type="button" onClick={saveDate}>
           Save
         </button>
       </div>
     );
   };
+  useEffect(() => {
+    let startDate = new Date(dateOne);
+    let endDate = new Date(dateTwo);
+    let timeDifference = endDate - startDate;
+    let days = Math.abs(timeDifference / (1000 * 60 * 60 * 24));
+    let finalDate = Math.floor(days);
+    setTotalDays(finalDate);
+  }, [dateTwo]);
 
   const spIconStyle = {
     padding: "9px",
@@ -155,7 +164,7 @@ const SingleProperties = () => {
                     onClick={() => setCalShowHide(!calShowHide)}
                   />
                   <p>
-                    <span> {dateOne} </span> To <span> {dateTwo}</span>
+                    <span onClick={() => setCalShowHide(!calShowHide)}> {dateOne} </span> To <span onClick={() => setCalShowHide(!calShowHide)}> {dateTwo}</span>
                   </p>
                 </div>
                 <div
@@ -295,10 +304,9 @@ const SingleProperties = () => {
             <div className="price-cal">
               <div className="price-one">
                 <p>
-                  {" "}
-                  &#x20B9; {roomPrice} * {selectPerson} night
+                  &#x20B9; {roomPrice} * {totalDays} night
                 </p>
-                <p>{roomPrice * selectPerson}</p>
+                <p>{roomPrice * totalDays}</p>
               </div>
               <div className="price-one">
                 <p>Cleaning fee</p>
@@ -306,7 +314,7 @@ const SingleProperties = () => {
               </div>
               <div className="price-total">
                 <p>Total Price</p>
-                <p>&#x20B9;{roomPrice * selectPerson + cleaningFee}</p>
+                <p>&#x20B9;{selectPerson <= 2? roomPrice * totalDays + cleaningFee: (roomPrice * totalDays + cleaningFee )}</p>
               </div>
             </div>
           </div>
@@ -319,9 +327,9 @@ const SingleProperties = () => {
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d56053.10572697137!2d77.19123018808592!3d28.590202210298823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1686136473844!5m2!1sen!2sin"
           width="90%"
           height="350"
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </div>
