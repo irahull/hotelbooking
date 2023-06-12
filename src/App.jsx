@@ -16,6 +16,8 @@ import SingleProperties from "./Pages/ShowProperties/SingleProperties/SingleProp
 import Error from "./Pages/Error/Error"
 
 const App = () => {
+
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -40,7 +42,7 @@ const App = () => {
       element : <>
       <Navbar/>
       <SearchBar/>
-       <ShowProperties />
+       <ShowProperties/>
        <Footer />
       </>
     },

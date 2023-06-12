@@ -10,7 +10,7 @@ const HomeMiddle = () => {
         <iframe
           width="445"
           height="250"
-          src="https://www.youtube.com/embed/ZK-rNEhJIDs?controls=0"
+          src="https://www.youtube.com/embed/1Jc4ywxopmY?controls=0"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
