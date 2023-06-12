@@ -114,7 +114,7 @@ const Footer = () => {
           <h4>EXPERIENCE HOUSING APP ON MOBILE</h4>
           <div className="pstore-logo">
             <img src={PStore} alt="PlayStore Logo" />
-            <img src={AStore} alt="AppleStore Logo" />
+            {/* <img src={AStore} alt="AppleStore Logo" /> */}
           </div>
           <div className="scanner">
             <img src={ScannerImg} alt="Scanner" />

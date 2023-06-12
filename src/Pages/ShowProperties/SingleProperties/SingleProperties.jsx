@@ -231,14 +231,14 @@ const SingleProperties = () => {
                                 : setSelectPerson(selectPerson - 1)
                             }
                           >
-                            <i class="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus"></i>
                           </div>
                           <div className="number">{selectPerson}</div>
                           <div
                             className="inc"
                             onClick={() => setSelectPerson(selectPerson + 1)}
                           >
-                            <i class="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-plus"></i>
                           </div>
                         </div>
                       </ul>
@@ -255,14 +255,14 @@ const SingleProperties = () => {
                                 : setSelectChild(selectChild - 1)
                             }
                           >
-                            <i class="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus"></i>
                           </div>
                           <div className="number">{selectChild}</div>
                           <div
                             className="inc"
                             onClick={() => setSelectChild(selectChild + 1)}
                           >
-                            <i class="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-plus"></i>
                           </div>
                         </div>
                       </ul>
@@ -279,14 +279,14 @@ const SingleProperties = () => {
                                 : setSelectInfant(selectInfant - 1)
                             }
                           >
-                            <i class="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus"></i>
                           </div>
                           <div className="number">{selectInfant}</div>
                           <div
                             className="inc"
                             onClick={() => setSelectInfant(selectInfant + 1)}
                           >
-                            <i class="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-plus"></i>
                           </div>
                         </div>
                       </ul>
@@ -303,14 +303,14 @@ const SingleProperties = () => {
                                 : setSelectPet(selectPet - 1)
                             }
                           >
-                            <i class="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus"></i>
                           </div>
                           <div className="number">{selectPet}</div>
                           <div
                             className="inc"
                             onClick={() => setSelectPet(selectPet + 1)}
                           >
-                            <i class="fa-solid fa-plus"></i>
+                            <i className="fa-solid fa-plus"></i>
                           </div>
                         </div>
                       </ul>

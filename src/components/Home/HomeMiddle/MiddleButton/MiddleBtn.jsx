@@ -39,9 +39,9 @@ const MiddleBtn = () => {
   // });
 
   return (
-    <div class="wrapper" onMouseEnter={BtnGrow} onMouseLeave={BtnShrink}>
-      <a class="link" href="#" target="_blank">
-        <div class="color"></div>
+    <div className="wrapper" onMouseEnter={BtnGrow} onMouseLeave={BtnShrink}>
+      <a className="link" href="#" target="_blank">
+        <div className="color"></div>
         <span>Explore Now</span>
         <i className="fa-solid fa-arrow-right"></i>
       </a>

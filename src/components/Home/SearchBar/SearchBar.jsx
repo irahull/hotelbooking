@@ -77,7 +77,7 @@ const SearchBar = () => {
               onMouseEnter={()=>setLocationShowHide(!locationShowHide)}
               onMouseLeave={()=>setLocationShowHide(!locationShowHide)}
             />
-            <p>Chhatarpur New Delhi</p>
+            <p><input type="text" placeholder="Chhatarpur New Delhi" /></p>
             <div
               className={`${
                 locationShowHide

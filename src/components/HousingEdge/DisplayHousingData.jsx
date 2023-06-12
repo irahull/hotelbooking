@@ -1,8 +1,8 @@
 import React from "react";
 
-const DisplayHousingData = ({item,key}) => {
+const DisplayHousingData = ({item}) => {
   return (
-    <div className="housing-container" key={key}>
+    <div className="housing-container">
       <div className="image-section">
         <img src={item.image} alt="aaaa" />
       </div>

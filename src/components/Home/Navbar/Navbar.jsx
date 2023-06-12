@@ -66,7 +66,7 @@ const Navbar = () => {
       <div className="navbar-section">
         <div className="nav-left">
           <p onClick={OpenMenu}>
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </p>
 
           <div className="logo">
@@ -155,10 +155,10 @@ const Navbar = () => {
             <div className="user-account">
               {/* <img src={User} alt="User" /> */}
               <p>
-                <i class="fa-solid fa-user"></i>
+                <i className="fa-solid fa-user"></i>
               </p>
               <span>
-                <i class="fa-solid fa-chevron-down"></i>
+                <i className="fa-solid fa-chevron-down"></i>
               </span>
             </div>
             <div className={`${accountHover ? "user-show" : "user-show hide"}`}>

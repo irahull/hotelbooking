@@ -49,17 +49,17 @@ const HousingEdge = () => {
         <div className="housing-wrapper">
           {scrollX !== 0 && (
             <button className="prev" onClick={() => slide(-150)}>
-              <i class="fa-solid fa-arrow-left"></i>
+              <i className="fa-solid fa-arrow-left"></i>
             </button>
           )}
           <div className="housing-edge-data" ref={scrl} onScroll={scrollCheck}>
-            {EdgeData.map((item, ind) => {
-              return <DisplayHousingData item={item} key={ind} />;
+            {EdgeData.map((item, id) => {
+              return <DisplayHousingData item={item} key={id}/>;
             })}
           </div>
           {!scrolEnd && (
             <button className="next" onClick={() => slide(+150)}>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
           )}
         </div>

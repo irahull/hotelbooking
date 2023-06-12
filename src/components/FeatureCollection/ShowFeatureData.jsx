@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ShowFeatureData = ({item,key}) => {
+const ShowFeatureData = ({item,id}) => {
   return (
-    <div className="data-section" key={key} style={{cursor:"pointer"}}>
+    <div className="data-section" key={id} style={{cursor:"pointer"}}>
       <div className="image-section"  >
         <img src={item.image} alt="aaaa" />
       </div>

@@ -41,6 +41,20 @@
 
 // --------------- Responsive Design -----------------
 
+@media screen and (min-width: 1400px){
+    .properties-section{
+        .title{
+            text-align: center;
+        }
+        .para{
+            text-align: center;
+        }
+        .price{
+            text-align: center;
+        }
+    }
+}
+
 @media screen and (max-width: 480px){
     .properties-section{
         width: 100%;

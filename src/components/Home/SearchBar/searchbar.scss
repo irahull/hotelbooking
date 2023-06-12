@@ -75,7 +75,12 @@
         gap: 10px;
         position: relative;
         p {
-          font-weight: 500;
+          input{
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            outline: none;
+          }
         }
         .location-tooltip {
           width: 150px;
@@ -98,7 +103,7 @@
         gap: 10px;
         position: relative;
         cursor: pointer;
-      
+
         p {
           font-weight: 500;
         }
@@ -225,7 +230,7 @@
     visibility: hidden;
   }
 }
-.search-extra-style{
+.search-extra-style {
   margin: 40px 0px;
   z-index: 2;
 }
