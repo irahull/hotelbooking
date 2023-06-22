@@ -13,13 +13,12 @@ import SingleThree from "./../../../assets/single-room-three.webp";
 import SingleFour from "./../../../assets/single-room-four.webp";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import { BedOutlined } from "@mui/icons-material";
-import {
-  DatePickerProvider,
-  DatePicker,
-  useDatePickGetter,
-  useDatePickReset,
-} from "@bcad1591/react-date-picker";
 import SinglePropertyEffect from "../SimmerEffect/SinglePropertyEffect";
+
+import { format } from "date-fns";
+import { enGB } from "date-fns/locale";
+import { DateRangePickerCalendar, START_DATE } from "react-nice-dates";
+import "react-nice-dates/build/style.css";
 
 const SingleProperties = () => {
   const date = new Date().toLocaleDateString();
@@ -36,30 +35,21 @@ const SingleProperties = () => {
   const [totalDays, setTotalDays] = useState(1);
   const [simmerEffect, setSimmerEffect] = useState(true);
 
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
+  const [focus, setFocus] = useState(START_DATE);
+  const handleFocusChange = (newFocus) => {
+    setFocus(newFocus || START_DATE);
+  };
+
   // const [TotalPrice] = useState( roomPrice+cleaningFee)
 
-  const GetDate = () => {
-    const { pickedDates } = useDatePickGetter();
-    const resetFunc = useDatePickReset();
-
-    const saveDate = () => {
-      setDateOne(pickedDates.firstPickedDate?.toLocaleDateString());
-      setDateTwo(pickedDates.secondPickedDate?.toLocaleDateString());
-      setCalShowHide(false);
-    };
-
-    return (
-      <div className="date-container">
-        <DatePicker disablePreviousDays />
-        <button type="button" onClick={resetFunc}>
-          Clear
-        </button>
-        <button type="button" onClick={saveDate}>
-          Save
-        </button>
-      </div>
-    );
+  const saveDate = () => {
+    setDateOne(startDate);
+    setDateTwo(endDate);
+    setCalShowHide(!calShowHide)
   };
+
   useEffect(() => {
     let startDate = new Date(dateOne);
     let endDate = new Date(dateTwo);
@@ -67,13 +57,11 @@ const SingleProperties = () => {
     let days = Math.abs(timeDifference / (1000 * 60 * 60 * 24));
     let finalDate = Math.floor(days);
     setTotalDays(finalDate);
-  }, [dateTwo]);
+  }, [saveDate]);
 
   useEffect(() => {
-    setSimmerEffect(false)
-    console.log(simmerEffect)
-  })
-  
+    setSimmerEffect(false);
+  });
 
   const spIconStyle = {
     padding: "9px",
@@ -182,12 +170,18 @@ const SingleProperties = () => {
                       <p>
                         <span onClick={() => setCalShowHide(!calShowHide)}>
                           {" "}
-                          {dateOne}{" "}
+                          {startDate
+                            ? format(startDate, "dd MMM yyyy ", {
+                                locale: enGB,
+                              })
+                            : " Start "}{" "}
                         </span>{" "}
-                        To{" "}
+                        - {" "}
                         <span onClick={() => setCalShowHide(!calShowHide)}>
                           {" "}
-                          {dateTwo}
+                          {endDate
+                            ? format(endDate, "dd MMM yyyy", { locale: enGB })
+                            : " end"}
                         </span>
                       </p>
                     </div>
@@ -196,9 +190,21 @@ const SingleProperties = () => {
                         calShowHide ? "sp-cal" : "sp-cal hide-sp-cal"
                       }`}
                     >
-                      <DatePickerProvider>
-                        <GetDate />
-                      </DatePickerProvider>
+
+                      <div className="singlecal">
+                        <DateRangePickerCalendar
+                          startDate={startDate}
+                          endDate={endDate}
+                          focus={focus}
+                          onStartDateChange={setStartDate}
+                          onEndDateChange={setEndDate}
+                          onFocusChange={handleFocusChange}
+                          locale={enGB}
+                        />
+                        <div className="singlebtn">
+                          <button onClick={saveDate}>SAVE</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="guests">

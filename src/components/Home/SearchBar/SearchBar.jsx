@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import "./searchbar.scss";
-import {
-  DatePickerProvider,
-  DatePicker,
-  useDatePickGetter,
-  useDatePickReset,
-} from "@bcad1591/react-date-picker";
 import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import KeyboardDoubleArrowUpOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowUpOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import { format } from "date-fns";
+import { enGB } from "date-fns/locale";
+import { DateRangePickerCalendar, START_DATE } from "react-nice-dates";
+import "react-nice-dates/build/style.css";
 
 const SearchBar = () => {
   const [calenderShowHide, setCalenderShowHide] = useState(false);
@@ -20,31 +19,15 @@ const SearchBar = () => {
   const [dateOne, setDateOne] = useState();
   const [dateTwo, setDateTwo] = useState();
 
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
+  const [focus, setFocus] = useState(START_DATE);
+  const handleFocusChange = (newFocus) => {
+    setFocus(newFocus || START_DATE);
+  };
+
   const location = useLocation();
   const navigate = useNavigate();
-
-  const GetDate = () => {
-    const { pickedDates } = useDatePickGetter();
-    // const resetFunc = useDatePickReset();
-
-    const saveDate = () => {
-      setDateOne(pickedDates.firstPickedDate?.toLocaleDateString());
-      setDateTwo(pickedDates.secondPickedDate?.toLocaleDateString());
-      setCalenderShowHide(false);
-    };
-
-    return (
-      <div className="date-container">
-        <DatePicker disablePreviousDays />
-        {/* <button type="button" onClick={resetFunc}>
-          Clear
-        </button> */}
-        <button type="button" onClick={saveDate}>
-          Save
-        </button>
-      </div>
-    );
-  };
 
   const iconStyle = {
     padding: "9px",
@@ -54,7 +37,6 @@ const SearchBar = () => {
     backgroundColor: "#f0f9ff",
     cursor: "pointer",
   };
-
 
   return (
     <div
@@ -74,10 +56,12 @@ const SearchBar = () => {
           <div className="location">
             <MyLocationOutlinedIcon
               style={iconStyle}
-              onMouseEnter={()=>setLocationShowHide(!locationShowHide)}
-              onMouseLeave={()=>setLocationShowHide(!locationShowHide)}
+              onMouseEnter={() => setLocationShowHide(!locationShowHide)}
+              onMouseLeave={() => setLocationShowHide(!locationShowHide)}
             />
-            <p><input type="text" placeholder="Chhatarpur New Delhi" /></p>
+            <p>
+              <input type="text" placeholder="Chhatarpur New Delhi" />
+            </p>
             <div
               className={`${
                 locationShowHide
@@ -96,17 +80,20 @@ const SearchBar = () => {
             <CalendarMonthOutlinedIcon
               style={iconStyle}
               onClick={() => setCalenderShowHide(!calenderShowHide)}
-              onMouseEnter={()=> setCalShowHide(true)}
-              onMouseLeave={()=> setCalShowHide(false)}
+              onMouseEnter={() => setCalShowHide(true)}
+              onMouseLeave={() => setCalShowHide(false)}
             />
             <p className="date-time">
-              From
               <span onClick={() => setCalenderShowHide(!calenderShowHide)}>
-                {dateOne}
+              {startDate
+              ? format(startDate, "dd MMM yyyy ", { locale: enGB })
+              : "FROM "}
               </span>
-              - To
+              - {" "}
               <span onClick={() => setCalenderShowHide(!calenderShowHide)}>
-                {dateTwo}
+              {endDate
+              ? format(endDate, "dd MMM yyyy", { locale: enGB })
+              : "TO"}
               </span>
             </p>
             <div
@@ -128,14 +115,28 @@ const SearchBar = () => {
         </div>
 
         <div
-          className={`${
+          className={`${  
             calenderShowHide ? "calender" : "calender hide-calender"
           }`}
         >
           {/* <Calendar onChange={setDate} value={date} /> */}
-          <DatePickerProvider style={{ padding: "10px !important" }}>
+          {/* <DatePickerProvider style={{ padding: "10px !important" }}>
             <GetDate />
-          </DatePickerProvider>
+          </DatePickerProvider> */}
+          <div className="newcal">
+          <DateRangePickerCalendar
+            startDate={startDate}
+            endDate={endDate}
+            focus={focus}
+            onStartDateChange={setStartDate}
+            onEndDateChange={setEndDate}
+            onFocusChange={handleFocusChange}
+            locale={enGB}
+          />
+          <div className="calbtn">
+            <button onClick={() => setCalenderShowHide(!calenderShowHide)}>SAVE</button>
+          </div>
+          </div>
         </div>
       </div>
       <div
