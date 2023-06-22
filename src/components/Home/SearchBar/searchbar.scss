@@ -167,6 +167,12 @@
         // height: 50vh;
         background-color: white;
         border-radius: 10px;
+        .nice-dates-day{
+          &::before{
+
+            background-color: #0078db;
+          }
+        }
         .calbtn{
           text-align: center;
           button{

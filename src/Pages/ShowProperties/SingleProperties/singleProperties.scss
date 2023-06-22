@@ -196,6 +196,12 @@
                 // .nice-dates-day_date{
                 //   border-bottom: none;
                 // }
+                .nice-dates-day{
+                  &::before{
+
+                    background-color: #0078db;
+                  }
+                }
                 .singlebtn{
                   text-align: center;
                   button{
